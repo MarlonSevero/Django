@@ -1,25 +1,37 @@
 <!--iniciando o projeto e o ambiente virtual-->
-pip --version
-virtualenv venv 
-source .venv/bin/activate
-pip install django
-pip freeze 
-pip freeze > requirements.txt
-djando-admin help
-django-admin startproject setup . //setup nome do projeto
-python manage.py runserver 
+$ pip --version
+$ pip install virtualenv
+$ virtualenv venv 
+$ source .venv/bin/activate
+$ pip install django
+$ pip freeze 
+$ pip freeze > requirements.txt
+$ djando-admin help
+$ django-admin startproject setup . //setup nome do projeto
+$ python manage.py runserver 
 //deve iniciar o servidor no endereco 127.0.0.1:8000
 
-<!--Configs-->
+<!--troca de linguage-->
+// Alteramos a lingua na linha 109 e 111
 
-//troca de lingua
-//em setting, language quase final arquivo
+    LANGUAGE_CODE = "pt-br"
+    TIME_ZONE = "America/Sao_Paulo"
+<!--Criando o .gitignore e Protegendo SECRET_KEY-->
+    //gerenciar a secret key
+        $ pip install python-dotenv
+        $ pip freeze > requirements.txt
+        $ vim .env //dentro do arquivo .env colocamos nossa SECRET_KEY = KEY_SEM_ASPAS
+        //no settings
+            $ import os
+            $ from dotenv import load_dotenv
+            $ load_dotenv()
+            $ vim .gitignore //colocamos todos arquivos gitignore.io
+            $ SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
-//gerenciar a secret key
-pip install python-dotenv
+Criando apps
+    $ python manage.py startapp nome_app 
+    //Em setting, INSTALLED_APPS, vamos adicionar 'nome_app'
 
-//em settings importe os, dotenv->load_dotenv
-from pathlib import Path, os
-from dotenv import load_dotenv
 
-load_dotenv()
+
+
