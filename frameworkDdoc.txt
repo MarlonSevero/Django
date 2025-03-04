@@ -1,0 +1,25 @@
+<!--iniciando o projeto e o ambiente virtual-->
+pip --version
+virtualenv venv 
+source .venv/bin/activate
+pip install django
+pip freeze 
+pip freeze > requirements.txt
+djando-admin help
+django-admin startproject setup . //setup nome do projeto
+python manage.py runserver 
+//deve iniciar o servidor no endereco 127.0.0.1:8000
+
+<!--Configs-->
+
+//troca de lingua
+//em setting, language quase final arquivo
+
+//gerenciar a secret key
+pip install python-dotenv
+
+//em settings importe os, dotenv->load_dotenv
+from pathlib import Path, os
+from dotenv import load_dotenv
+
+load_dotenv()
