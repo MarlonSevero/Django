@@ -31,7 +31,8 @@ $ python manage.py runserver
 Criando apps
     $ python manage.py startapp nome_app 
     //Em setting, INSTALLED_APPS, vamos adicionar 'nome_app'
-
+    //nome_app/views.py (controle de requisicoes e renderizacao)
+        
 
 
 
